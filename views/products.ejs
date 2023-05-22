@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Products</title>
+  </head>
+  <body>
+    <h1>Products</h1>
+
+    <ul>
+      <% products.forEach(product => { %>
+      <li>
+        <%= product.name %> - <%= product.description %> - <%= product.price %>
+        <form method="post" action="/removeProduct">
+          <input type="hidden" name="productName" value="<%= product.name %>" />
+          <input type="submit" value="Remove" />
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
